@@ -55,8 +55,8 @@ const navIcons = [
 </script>
 
 <template>
-  <div class="site-top-header">
-    <div class="slice-anim header-wrapper px-4 md:px-0 h-10">
+  <div class="site-top-header bg-gray-300 dark:bg-black">
+    <div class="slice-anim header-wrapper container px-4 md:px-0 h-10">
       <ul class="menu flex items-center">
         <button class="nav-icon-btn" title="translate">
           <div class="i-carbon:translate" />
@@ -83,8 +83,8 @@ const navIcons = [
     </div>
   </div>
 
-  <header class="site-main-header">
-    <div class="header-wrapper px-4 md:px-0 h-20">
+  <header class="site-main-header bg-white dark:bg-black bg-opacity-40 dark:bg-opacity-40">
+    <div class="header-wrapper container px-4 md:px-0 h-20">
       <div class="flex gap-2.5 items-center">
         <SideNavDrawer>
           <div class="hidden lg:inline-block">
@@ -150,17 +150,22 @@ const navIcons = [
 </template>
 
 <style scoped>
-.site-top-header {
+/* .site-top-header {
   @apply bg-gray-300 dark:bg-black;
-}
+} */
 
 .site-main-header {
   backdrop-filter: saturate(180%) blur(20px);
-  @apply bg-white dark:bg-black bg-opacity-40 dark:bg-opacity-40 shadow-lg sticky top-0 z-20;
+  @apply shadow-lg sticky top-0 z-20;
 }
 
 .header-wrapper {
-  @apply container mx-auto flex items-center justify-between;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* @apply container mx-auto flex items-center justify-between; */
 }
 
 /* .site-logo {
@@ -277,7 +282,16 @@ ul.menu > li button:after,
 ul.menu > li span.dots:before,
 ul.menu > li span.dots:after {
   padding: inherit;
-  @apply text-black dark:text-white;
+  color: black;
+}
+.dark ul.menu > li a:before,
+.dark ul.menu > li a:after,
+.dark ul.menu > li button:before,
+.dark ul.menu > li button:after,
+.dark ul.menu > li span.dots:before,
+.dark ul.menu > li span.dots:after {
+  padding: inherit;
+  color: white;
 }
 ul.menu li a:hover:before,
 ul.menu li a:hover:after,

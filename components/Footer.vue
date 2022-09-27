@@ -46,7 +46,7 @@ const usefulLinks = [
 </script>
 
 <template>
-  <footer class="site-footer px-4 md:px-0">
+  <footer class="site-footer px-4 md:px-0 bg-gray-300 dark:bg-black">
     <div class="footer-wrapper">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-4">
         <div class="flex flex-col">
@@ -162,7 +162,7 @@ const usefulLinks = [
 
 <style scoped>
 .site-footer {
-  @apply bg-gray-300 dark:bg-black pt-6 pb-3 mt-auto;
+  @apply pt-6 pb-3 mt-auto;
 }
 
 .footer-wrapper {

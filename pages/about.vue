@@ -8,7 +8,7 @@ const timeline = [
 <template>
   <div class="about relative flex items-center">
     <img src="~/assets/images/tokyo.png" alt="tokyo" class="absolute inset-0">
-    <div class="card lg:w-2/5 md:w-1/2 px-4 md:px-8 md:ml-20 lg:ml-40">
+    <div class="card lg:w-2/5 md:w-1/2 px-4 md:px-8 md:ml-20 lg:ml-40 bg-white dark:bg-gray-800">
       <article class="prose dark:prose-invert prose-sm lg:prose-lg">
         <h1>About</h1>
         <p>
@@ -52,7 +52,7 @@ div.about {
 }
 
 .about .card {
-  @apply bg-white dark:bg-gray-800 py-8 relative z-10;
+  @apply py-8 relative z-10;
 }
 
 /*section.timeline {

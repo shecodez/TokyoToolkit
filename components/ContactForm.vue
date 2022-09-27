@@ -69,16 +69,16 @@ async function handleSubmit() {
       <div class="flex flex-col md:flex-row gap-3">
         <div class="flex-1">
           <label for="name" class="sr-only">Name*</label>
-          <input v-model="form.name" type="text" name="name" placeholder="Name" required>
+          <input v-model="form.name" type="text" name="name" placeholder="Name" required class="bg-gray-200 dark:bg-gray-900">
         </div>
         <div class="flex-1">
           <label for="email" class="sr-only">Email*</label>
-          <input v-model="form.email" type="email" name="email" placeholder="E-mail" required>
+          <input v-model="form.email" type="email" name="email" placeholder="E-mail" required class="bg-gray-200 dark:bg-gray-900">
         </div>
       </div>
       <div>
         <label for="subject" class="sr-only">Subject</label>
-        <input v-model="form.subject" type="text" name="subject" placeholder="Subject">
+        <input v-model="form.subject" type="text" name="subject" placeholder="Subject" class="bg-gray-200 dark:bg-gray-900">
       </div>
       <div class="hidden">
         <label class="sr-only">Don't fill this out if you're human</label>
@@ -86,7 +86,7 @@ async function handleSubmit() {
       </div>
       <div>
         <label for="message" class="sr-only">Message*</label>
-        <textarea v-model="form.message" name="message" placeholder="Message" rows="4" required />
+        <textarea v-model="form.message" name="message" placeholder="Message" rows="4" required class="bg-gray-200 dark:bg-gray-900" />
       </div>
       <!-- <div data-netlify-recaptcha="true" /> -->
       <button type="submit" class="send-btn rainbow-bg">
@@ -103,7 +103,7 @@ async function handleSubmit() {
 <style scoped>
 .contact-form input,
 .contact-form textarea {
-  @apply bg-gray-200 dark:bg-gray-900 p-3 w-full;
+  @apply p-3 w-full;
 }
 
 .contact-form form {

@@ -21,7 +21,7 @@ useHead({
       />
     </div>
 
-    <div class="card lg:w-1/3 md:w-1/2 lg:mr-10 px-5 py-24 mx-auto flex flex-col">
+    <div class="card lg:w-1/3 md:w-1/2 lg:mr-10 px-5 py-24 mx-auto flex flex-col bg-white dark:bg-gray-800">
       <h2 class="rainbow-text text-3xl lg:text-5xl font-bold mb-6">
         Get in Touch
       </h2>
@@ -42,6 +42,6 @@ div.contact {
 }
 
 .contact .card {
-  @apply bg-white dark:bg-gray-800 p-8 relative z-10 shadow-md;
+  @apply p-8 relative z-10 shadow-md;
 }
 </style>

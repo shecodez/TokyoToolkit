@@ -108,8 +108,3 @@ useHead({
   </div>
 </template>
 
-<style scoped>
-.fab {
-  @apply p-4 bg-green-400 rounded-full hover:bg-green-600 text-2xl;
-}
-</style>

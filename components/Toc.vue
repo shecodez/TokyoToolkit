@@ -1,29 +1,31 @@
 <script setup>
 // define links prop
-defineProps(['links']);
+defineProps(['links'])
 
 // flatten TOC links nested arrays to one array
 const flattenLinks = (links) => {
-  let _links = links
+  const _links = links
     .map((link) => {
-      let _link = [link];
+      let _link = [link]
       if (link.children) {
-        let flattened = flattenLinks(link.children);
-        _link = [link, ...flattened];
+        const flattened = flattenLinks(link.children)
+        _link = [link, ...flattened]
       }
-      return _link;
+      return _link
     })
-    .flat(1);
+    .flat(1)
 
-  //console.log({ _links });
-  return _links;
-};
+  // console.log({ _links });
+  return _links
+}
 </script>
 
 <template>
-  <nav class="toc">
+  <nav class="toc max-h-[calc(100vh-10rem)] overflow-auto">
     <header class="toc-header">
-      <h3 class="text-xl font-bold">Table of contents</h3>
+      <h3 class="text-xl font-bold">
+        Table of contents
+      </h3>
     </header>
     <ul class="toc-links">
       <!-- render each link with depth class -->
@@ -39,7 +41,6 @@ const flattenLinks = (links) => {
 <style scoped>
 .toc {
   @apply p-4 border border-gray-200 rounded;
-  @apply max-h-[calc(100vh-10rem)] overflow-auto;
 }
 
 .toc-header {

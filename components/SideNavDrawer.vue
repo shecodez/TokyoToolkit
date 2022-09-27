@@ -54,7 +54,7 @@ const socialIcons = [
     </button>
 
     <Drawer :is-open="openNavDrawer" css="w-80 mr-auto shadow-lg bg-white dark:bg-black" @close="closeDrawer">
-      <div class="side-nav text-center">
+      <div class="side-nav relative py-4 flex flex-col items-center h-full text-center">
         <button class="absolute top-4 right-4" @click="closeDrawer">
           <div class="i-carbon:close" />
         </button>
@@ -109,10 +109,10 @@ const socialIcons = [
             All Rights Reserved.
           </p>
           <div class="divide-x divide text-xs md:text-sm">
-            <NuxtLink to="/legal/privacy" class="link h5 pr-2">
+            <NuxtLink to="/legal/privacy" class="link pr-2">
               Privacy Policy
             </NuxtLink>
-            <NuxtLink to="/legal/terms" class="link h5 pl-2">
+            <NuxtLink to="/legal/terms" class="link pl-2">
               Terms of Use
             </NuxtLink>
           </div>
@@ -128,9 +128,9 @@ const socialIcons = [
 </template>
 
 <style scoped>
-.side-nav {
+/* .side-nav {
   @apply relative py-4 flex flex-col items-center h-full;
-}
+} */
 
 .site-logo {
   @apply text-4xl pt-10 pb-3 font-black;
@@ -204,7 +204,14 @@ ul.menu > li a:after,
 ul.menu > li span.dots:before,
 ul.menu > li span.dots:after {
   padding: inherit;
-  @apply text-black dark:text-white;
+  color: black;
+}
+.dark ul.menu > li a:before,
+.dark ul.menu > li a:after,
+.dark ul.menu > li span.dots:before,
+.dark ul.menu > li span.dots:after {
+  padding: inherit;
+  color: white;
 }
 ul.menu li a:hover:before,
 ul.menu li a:hover:after,

@@ -11,7 +11,7 @@ const postTypeClasses = [
 </script>
 
 <template>
-  <div class="post" :class="showTextLeft && 'flex-row-reverse'">
+  <div class="post bg-gray-300 dark:bg-gray-900" :class="showTextLeft && 'flex-row-reverse'">
     <div v-if="post.type === 'quote'" class="quote-icon">
       <div class="i-carbon:quotes" />
     </div>
@@ -22,8 +22,8 @@ const postTypeClasses = [
     </div>
     <div v-if="!showMediaOnly" class="text-container">
       <template v-if="post.cover_image">
-        <div v-if="showTextLeft" class="arrow arrow-right" />
-        <div v-else class="arrow arrow-left" />
+        <div v-if="showTextLeft" class="arrow arrow-right border-l-gray-300 dark:border-l-gray-900" />
+        <div v-else class="arrow arrow-left border-r-gray-300 dark:border-r-gray-900" />
       </template>
       <small class="topic">
         <NuxtLink :to="`/topics/${post._path.split('/')[2]}`" class="hover:underline">
@@ -48,7 +48,7 @@ const postTypeClasses = [
 
 <style scoped>
 .post {
-  @apply relative bg-gray-300 dark:bg-gray-900 aspect-video flex;
+  @apply relative aspect-video flex;
 }
 
 .post .media-container {
@@ -62,7 +62,7 @@ const postTypeClasses = [
   @apply relative flex-1 flex flex-col items-stretch p-4;
 }
 .post .topic {
-  @apply uppercase text-teal-500 text-xs  pb-1;
+  @apply uppercase text-teal-500 text-xs pb-1;
 }
 .post .title {
   @apply hover:text-teal-500 text-xl leading-5 pb-2;
@@ -77,7 +77,7 @@ const postTypeClasses = [
   @apply absolute inset-0 opacity-10 text-9xl;
 }
 .read-more-btn {
-  @apply self-start mt-3 px-3 py-1 opacity-80 hover:opacity-100;
+  @apply self-start mt-3 px-3 py-1;
 }
 
 .line-clamp-2 {
@@ -102,10 +102,10 @@ const postTypeClasses = [
 }
 .arrow-right {
   border-left: 20px solid transparent;
-  @apply border-l-gray-300 dark:border-l-gray-900 -right-5;
+  @apply  -right-5;
 }
 .arrow-left {
   border-right: 20px solid transparent;
-  @apply border-r-gray-300 dark:border-r-gray-900 -left-5;
+  @apply  -left-5;
 }
 </style>

@@ -17,11 +17,11 @@ useHead({
 <template>
   <div class="blog-page">
     <div class="fixed flex flex-col justify-center inset-y-0 right-6 gap-6 z-20">
-      <NuxtLink to="/topics" class="icon-link" title="Topics">
+      <NuxtLink to="/topics" class="icon-link bg-teal-500 hover:bg-teal-700" title="Topics">
         <div class="i-carbon:folder-details" />
         <span class="sr-only">Topics</span>
       </NuxtLink>
-      <NuxtLink to="/blog/tags" class="icon-link" title="Tags">
+      <NuxtLink to="/blog/tags" class="icon-link bg-teal-500 hover:bg-teal-700" title="Tags">
         <div class="i-carbon:tag-group" />
         <span class="sr-only">Tags</span>
       </NuxtLink>
@@ -30,10 +30,10 @@ useHead({
     <section class="m-2">
       <client-only>
         <div class="posts grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-          <div class="post p-4 col-span-2">
+          <div class="post p-4 col-span-2 bg-gray-300 dark:bg-gray-900">
             example col-span-2 (opened)
           </div>
-          <div class="post p-4 row-span-2">
+          <div class="post p-4 row-span-2 bg-gray-300 dark:bg-gray-900">
             example row-span-2
           </div>
           <template v-for="(p, i) in posts" :key="`post-${i}`">
@@ -46,11 +46,11 @@ useHead({
 </template>
 
 <style scoped>
-.post {
+/* .post {
   @apply bg-gray-300 dark:bg-gray-900;
-}
+} */
 
 .icon-link {
-  @apply text-xl p-2 rounded bg-teal-500 hover:bg-teal-700;
+  @apply text-xl p-2 rounded;
 }
 </style>

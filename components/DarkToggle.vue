@@ -14,9 +14,13 @@ function toggleDark() {
 
 <style>
 body {
-  @apply bg-white text-gray-800;
+  background-color: white;
+  color: #1f2937;
+  /* @apply bg-white text-gray-800; */
 }
 html.dark body {
-  @apply bg-gray-800 text-white;
+  background-color: #1f2937;
+  color: white;
+  /* @apply bg-gray-800 text-white; */
 }
 </style>

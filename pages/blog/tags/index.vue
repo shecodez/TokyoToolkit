@@ -18,7 +18,7 @@ useHead({
     <section class="blog-tags py-10">
       <ul class="flex flex-wrap gap-2">
         <template v-for="(t, i) in tags" :key="`tag-${i}`">
-          <li class="tag">
+          <li class="tag bg-gray-300 dark:bg-black">
             <span>#&nbsp;</span>
             <NuxtLink :to="`/blog/tags/${t}`" class="font-semibold">
               {{ t }}
@@ -32,7 +32,7 @@ useHead({
 
 <style scoped>
 .tag {
-  @apply px-4 py-2 rounded bg-gray-300 dark:bg-black text-2xl whitespace-nowrap transition-all;
+  @apply px-4 py-2 rounded text-2xl whitespace-nowrap transition-all;
 }
 .tag:hover {
   @apply -translate-y-0.5;
