@@ -35,7 +35,7 @@ const postTypeClasses = [
           {{ post.title }}
         </NuxtLink>
       </h3>
-      <p class="description line-clamp-3">
+      <p class="description line-clamp-3 text-xs lg:text-base">
         {{ post.description }}
       </p>
       <NuxtLink :to="post._path" class="read-more-btn rainbow-bg">
@@ -68,7 +68,7 @@ const postTypeClasses = [
   @apply hover:text-teal-500 text-xl leading-5 pb-2;
 }
 .post .description {
-  @apply text-xs lg:text-base tracking-wide font-thin leading-relaxed;
+  @apply tracking-wide font-thin leading-relaxed;
 }
 .post .date {
   @apply text-xs uppercase mt-auto;

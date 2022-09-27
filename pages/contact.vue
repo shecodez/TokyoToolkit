@@ -6,7 +6,7 @@ useHead({
 </script>
 
 <template>
-  <div id="contact" class="contact relative flex items-center">
+  <div id="contact" class="contact p-10 lg:p-20 relative flex items-center">
     <div id="map-container" class="absolute inset-0 bg-gray-300 dark:bg-gray-800">
       <iframe
         width="100%"
@@ -21,7 +21,7 @@ useHead({
       />
     </div>
 
-    <div class="card px-5 py-24 mx-auto flex flex-col">
+    <div class="card lg:w-1/3 md:w-1/2 lg:mr-10 px-5 py-24 mx-auto flex flex-col">
       <h2 class="rainbow-text text-3xl lg:text-5xl font-bold mb-6">
         Get in Touch
       </h2>
@@ -39,10 +39,9 @@ useHead({
 <style scoped>
 div.contact {
   min-height: calc(100vh - 12.7vh);
-  @apply relative p-10 lg:p-20;
 }
 
 .contact .card {
-  @apply lg:w-1/3 md:w-1/2 bg-white dark:bg-gray-800 p-8 relative z-10 shadow-md lg:mr-10;
+  @apply bg-white dark:bg-gray-800 p-8 relative z-10 shadow-md;
 }
 </style>

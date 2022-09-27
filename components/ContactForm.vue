@@ -103,7 +103,7 @@ async function handleSubmit() {
 <style scoped>
 .contact-form input,
 .contact-form textarea {
-  @apply bg-gray-300 dark:bg-gray-900 placeholder:text-black dark:placeholder:text-white p-3 w-full;
+  @apply bg-gray-200 dark:bg-gray-900 p-3 w-full;
 }
 
 .contact-form form {
@@ -120,7 +120,7 @@ textarea[required] {
 
 .send-btn {
   transition: all 600ms cubic-bezier(0.23, 1, 0.32, 1);
-  @apply w-max px-6 py-2 uppercase hover:ring ring-current flex items-center gap-2;
+  @apply w-max px-6 py-2 uppercase flex items-center gap-2;
 }
 
 .alert {

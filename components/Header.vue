@@ -56,7 +56,7 @@ const navIcons = [
 
 <template>
   <div class="site-top-header">
-    <div class="slice-anim header-wrapper h-10">
+    <div class="slice-anim header-wrapper px-4 md:px-0 h-10">
       <ul class="menu flex items-center">
         <button class="nav-icon-btn" title="translate">
           <div class="i-carbon:translate" />
@@ -84,7 +84,7 @@ const navIcons = [
   </div>
 
   <header class="site-main-header">
-    <div class="header-wrapper h-20">
+    <div class="header-wrapper px-4 md:px-0 h-20">
       <div class="flex gap-2.5 items-center">
         <SideNavDrawer>
           <div class="hidden lg:inline-block">
@@ -94,7 +94,7 @@ const navIcons = [
             <div class="i-carbon:menu " />
           </div>
         </SideNavDrawer>
-        <NuxtLink to="/" class="site-logo rainbow-text">
+        <NuxtLink to="/" class="site-logo rainbow-text font-black text-lg lg:text-2xl">
           Tokyo<span class="heading-font">Toolkit</span>
         </NuxtLink>
       </div>
@@ -160,12 +160,12 @@ const navIcons = [
 }
 
 .header-wrapper {
-  @apply container mx-auto px-4 md:px-0 flex items-center justify-between;
+  @apply container mx-auto flex items-center justify-between;
 }
 
-.site-logo {
+/* .site-logo {
   @apply font-black text-lg lg:text-2xl;
-}
+} */
 
 .top-nav-link,
 .top-nav-btn {

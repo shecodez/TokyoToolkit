@@ -41,7 +41,7 @@ h5,
 }
 
 .rainbow-bg {
-  background-image: linear-gradient(to right, rgb(20, 184, 166), #f59e0b);
+  background: linear-gradient(to right, rgb(20, 184, 166), #f59e0b) !important;
   /* @apply bg-gradient-to-r from-primary to-cyan-400; */
 }
 

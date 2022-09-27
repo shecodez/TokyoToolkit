@@ -5,7 +5,7 @@ defineProps(['data'])
 </script>
 
 <template>
-  <div class="post-container">
+  <div class="post-container px-4 md:px-0">
     <NuxtLink to="/blog" class="flex items-center gap-2 hover:text-teal-500">
       <div class="i-carbon:arrow-left" />
       Back to Blog
@@ -36,11 +36,11 @@ defineProps(['data'])
     <hr class="border-primary">
 
     <section class="post">
-      <aside v-if="!!data.post.body.toc.links.length" class="left-aside">
+      <aside v-if="!!data.post.body.toc.links.length" class="left-aside col-span-full md:col-span-2">
         <Toc :links="data.post.body.toc.links" />
       </aside>
 
-      <article class="article post-first-letter prose dark:prose-invert prose-sm lg:prose-lg">
+      <article class="article post-first-letter col-span-full md:col-span-6 w-full prose dark:prose-invert prose-sm lg:prose-lg">
         <client-only>
           <ContentRenderer :value="data.post">
             <template #empty>
@@ -59,7 +59,7 @@ defineProps(['data'])
 
 <style scoped>
 .post-container {
-  @apply py-4 px-4 md:px-0 max-w-5xl m-auto;
+  @apply py-4 max-w-5xl m-auto;
 }
 .post-header {
   @apply py-4;
@@ -88,14 +88,14 @@ section.post {
 }
 .right-aside,
 .left-aside {
-  @apply col-span-full md:col-span-2 row-start-1 w-full mt-6;
+  @apply row-start-1 w-full mt-6;
 }
 aside > .toc {
   @apply sticky top-24;
 }
-.article {
+/* .article {
   @apply col-span-full md:col-span-6 w-full;
-}
+} */
 .post-first-letter {
   @apply first-letter:text-3xl first-letter:text-teal-500;
 }

@@ -46,7 +46,7 @@ const usefulLinks = [
 </script>
 
 <template>
-  <footer class="site-footer">
+  <footer class="site-footer px-4 md:px-0">
     <div class="footer-wrapper">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-4">
         <div class="flex flex-col">
@@ -128,7 +128,7 @@ const usefulLinks = [
 
       <div class="uppercase flex items-center h-16 border-b border-primary justify-between md:px-[4%] lg:px-[8%]">
         <h2 class="text-xl md:text-3xl">
-          Connect&nbsp;<span class="text-teal-500 !text-sm !md:text-lg">with</span>&nbsp;Us
+          Connect&nbsp;<span class="text-teal-500 text-sm md:text-lg">with</span>&nbsp;Us
         </h2>
         <ul class="flex gap-4 text-xl">
           <li v-for="(s, i) in socialIcons" :key="`footer-social-icon-${i}`" :title="s.label">
@@ -162,7 +162,7 @@ const usefulLinks = [
 
 <style scoped>
 .site-footer {
-  @apply px-4 md:px-0 bg-gray-300 dark:bg-black pt-6 pb-3 mt-auto;
+  @apply bg-gray-300 dark:bg-black pt-6 pb-3 mt-auto;
 }
 
 .footer-wrapper {
