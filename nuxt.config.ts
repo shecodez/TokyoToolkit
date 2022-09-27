@@ -28,4 +28,16 @@ export default defineNuxtConfig({
       }
     },
   },
+  // https://v3.nuxtjs.org/migration/runtime-config#runtime-config
+  runtimeConfig: {
+    // Private config that is only available on the server
+    apiSecret: '123',
+    // Config within public will be also exposed to the client
+    public: {
+      appName: 'Tokyo Toolkit',
+      appDescription:
+        'Japan-centric DIY interior / exterior design tutorials, workshops, documentaries, interviews, reviews, podcasts, and exploration.',
+      siteUrl: 'https://tokyotoolkit.com',
+    },
+  },
 })

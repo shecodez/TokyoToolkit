@@ -1,13 +1,196 @@
+<script setup>
+import { formatDate } from '../utils'
+
+const config = useRuntimeConfig()
+
+const blogQuery = queryContent('blog')
+  .only(['_path', 'title', 'date', 'cover_image'])
+  .sort({ date: -1 })
+  .limit(3)
+  .find()
+const { data: recentPosts } = await useAsyncData('blog-recent3', async () => {
+  return await blogQuery
+})
+
+const socialIcons = [
+  {
+    icon: 'i-carbon:logo-discord',
+    label: 'Discord',
+    link: 'https://discord.gg/x2tr4fJu',
+  },
+  { icon: 'i-carbon:logo-instagram', label: 'Instagram', link: 'https://www.instagram.com/TokyoToolkit/' },
+  { icon: 'i-carbon:logo-twitter', label: 'Twitter', link: 'https://twitter.com/TokyoToolkit' },
+  { icon: 'i-carbon:logo-youtube', label: 'YouTube', link: 'https://www.youtube.com/channel/UCzV2BYxwNJlgc67Szapji0g' },
+  { icon: 'i-carbon:logo-pinterest', label: 'Pinterest', link: 'https://www.pinterest.com/tokyotoolkit/' },
+]
+
+const businessLinks = [
+  // { link: '/about#team', label: 'Team' },
+  // { link: '/about#corporate', label: 'Corporate Profile' },
+  // { link: '/about#join', label: 'Careers' },
+]
+
+const quickLinks = [
+  { link: '/about', label: 'About' },
+  { link: '/blog', label: 'Blog' },
+  { link: '/events', label: 'Events' },
+  { link: '/shop', label: 'Shop' },
+  { link: '/contact', label: 'Contact' },
+]
+
+const usefulLinks = [
+  { link: '', label: 'Sitemap' },
+  { link: '/faq', label: 'FAQ' },
+  { link: '/support', label: 'Support' },
+]
+</script>
+
 <template>
-  <div
-    text="xl gray4"
-    m-5
-    flex
-    justify-center
-    gap-3
-  >
-    <NuxtLink i-carbon-campsite to="/" />
-    <a i-carbon-logo-github href="https://github.com/antfu/vitesse-nuxt3" target="_blank" />
-    <DarkToggle />
-  </div>
+  <footer class="site-footer">
+    <div class="footer-wrapper">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-4">
+        <div class="flex flex-col">
+          <div class="rainbow-text text-2xl mb-4 font-black">
+            Tokyo<span class="heading-font">Toolkit</span>
+          </div>
+          <p class="text-sm xl:text-base mb-2 font-light">
+            {{ config.appDescription }}
+          </p>
+          <ul class="mb-2">
+            <li v-for="(l, i) in businessLinks" :key="`business-link-${i}`">
+              <NuxtLink :to="l.link">
+                {{ l.label }}
+              </NuxtLink>
+            </li>
+          </ul>
+          <JoinNewsletterForm />
+        </div>
+
+        <div>
+          <h2 class="text-2xl mb-4">
+            Recent Posts
+          </h2>
+          <client-only>
+            <div>
+              <ul v-if="recentPosts.length" class="flex flex-col gap-3">
+                <template v-for="(p, i) in recentPosts.slice(0, 3)" :key="`recentPost-${i}`">
+                  <li class="flex gap-4">
+                    <img v-if="p.cover_image" :src="`/${p.cover_image}`" :alt="p.title" class="post-img h-11">
+                    <div v-else class="post-img w-11 h-11 bg-gray-500" />
+                    <p class="text-ellipsis overflow-hidden">
+                      <NuxtLink :to="p._path" class="truncate" :title="p.title">
+                        {{ p.title }}
+                      </NuxtLink>
+                      <br>
+                      <small v-if="p.date" class="text-xs uppercase">{{ formatDate(new Date(p.date)) }}</small>
+                    </p>
+                  </li>
+                </template>
+              </ul>
+              <div v-else>
+                <p>No posts found.</p>
+              </div>
+            </div>
+          </client-only>
+        </div>
+
+        <div>
+          <h2 class="text-2xl mb-4">
+            Quick Links
+          </h2>
+          <ul>
+            <li v-for="(l, i) in quickLinks" :key="`quick-link-${i}`">
+              <NuxtLink :to="l.link">
+                {{ l.label }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+
+        <div class="relative">
+          <h2 class="text-2xl mb-4">
+            Useful Links
+          </h2>
+          <ul>
+            <li v-for="(l, i) in usefulLinks" :key="`useful-link-${i}`">
+              <NuxtLink :to="l.link">
+                {{ l.label }}
+              </NuxtLink>
+            </li>
+          </ul>
+
+          <ul class="app-banners absolute bottom-0 right-0">
+            <li class="ios_app mb-2" />
+            <li class="android" />
+          </ul>
+        </div>
+      </div>
+
+      <div class="uppercase flex items-center h-16 border-b border-primary justify-between md:px-[4%] lg:px-[8%]">
+        <h2 class="text-xl md:text-3xl">
+          Connect&nbsp;<span class="text-teal-500 !text-sm !md:text-lg">with</span>&nbsp;Us
+        </h2>
+        <ul class="flex gap-4 text-xl">
+          <li v-for="(s, i) in socialIcons" :key="`footer-social-icon-${i}`" :title="s.label">
+            <a :href="s.link" target="_blank"><div :class="s.icon" /></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center justify-between my-3">
+        <p class="text-xs md:text-sm">
+          &copy; {{ new Date().getFullYear() }}
+          <span class="text-teal-500">Tokyo<span class="heading-font">Toolkit</span></span>
+          All Rights Reserved.
+        </p>
+        <div class="divide-x divide text-xs md:text-sm">
+          <NuxtLink to="/legal/privacy" class="h5 pr-2">
+            Privacy Policy
+          </NuxtLink>
+          <NuxtLink to="/legal/terms" class="h5 pl-2">
+            Terms of Use
+          </NuxtLink>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-center gap-1 text-sm">
+        Made with <div class="i-carbon:favorite-filled" /> by <a href="https://shecodez.com" target="_blank">shecodez</a> | NJN
+      </div>
+    </div>
+  </footer>
 </template>
+
+<style scoped>
+.site-footer {
+  @apply px-4 md:px-0 bg-gray-300 dark:bg-black pt-6 pb-3 mt-auto;
+}
+
+.footer-wrapper {
+  @apply container mx-auto;
+}
+
+a {
+  font-family: 'Marcellus SC', Georgia, serif;
+  @apply text-teal-500 hover:text-teal-700 cursor-pointer;
+}
+
+img.post-img {
+  aspect-ratio: 1 / 1;
+}
+
+.site-footer .app-banners .ios_app {
+  background: url('https://devimages-cdn.apple.com/app-store/marketing/guidelines/images/badge-example-preferred_2x.png')
+    no-repeat;
+  background-size: 135px 40px;
+  width: 135px;
+  height: 40px;
+  margin-left: auto;
+}
+.site-footer .app-banners .android {
+  background: url('https://play.google.com/intl/en_us/badges/images/badge_new.png') no-repeat;
+  background-size: 135px 40px;
+  width: 135px;
+  height: 40px;
+  margin-left: auto;
+}
+</style>
