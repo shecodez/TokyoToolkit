@@ -1,5 +1,5 @@
 <script setup>
-import './assets/css/main.css'
+// import './assets/css/main.css'
 
 const config = useRuntimeConfig()
 useHead({
@@ -25,9 +25,4 @@ html, body , #__nuxt{
   margin: 0;
   padding: 0;
 }
-
-/* html.dark {
-  background: #222;
-  color: white;
-} */
 </style>

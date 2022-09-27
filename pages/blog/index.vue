@@ -15,8 +15,8 @@ useHead({
 </script>
 
 <template>
-  <div class="relative">
-    <div class="fixed flex flex-col justify-center inset-y-0 right-6 gap-6 z-50">
+  <div class="blog-page">
+    <div class="fixed flex flex-col justify-center inset-y-0 right-6 gap-6 z-20">
       <NuxtLink to="/topics" class="icon-link" title="Topics">
         <div class="i-carbon:folder-details" />
         <span class="sr-only">Topics</span>

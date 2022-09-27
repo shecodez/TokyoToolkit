@@ -6,6 +6,6 @@
     <p class="pb-9">
       We'll figure out what to put here someday... until then here is Tokyo ToolKitsune
     </p>
-    <img src="~/assets/images/construction-kitten.jpg" alt="Tokyo ToolKitsune">
+    <img src="/TokyoToolKitsune.jpg" alt="Tokyo ToolKitsune">
   </div>
 </template>

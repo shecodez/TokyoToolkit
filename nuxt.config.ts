@@ -15,6 +15,7 @@ export default defineNuxtConfig({
   unocss: {
     preflight: true,
   },
+  css: ['@/assets/css/main.css'],
   colorMode: {
     classSuffix: '',
   },
@@ -36,7 +37,7 @@ export default defineNuxtConfig({
     public: {
       appName: 'Tokyo Toolkit',
       appDescription:
-        'Japan-centric DIY interior / exterior design tutorials, workshops, documentaries, interviews, reviews, podcasts, and exploration.',
+        'Japan-centric DIY interior / exterior design tutorials, workshops, documentaries, interviews, reviews, podcasts, toolkits, and exploration.',
       siteUrl: 'https://tokyotoolkit.com',
     },
   },

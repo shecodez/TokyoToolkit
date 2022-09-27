@@ -5,14 +5,19 @@ html {
   scroll-behavior: smooth;
 }
 
-/* html.dark {
-  @apply bg-gray-800 text-gray-50;
-} */
-
 html,
 body {
   /* height: 100%; */
   font-family: "Oswald", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.heading-font {
+  font-family: "Marcellus SC", Georgia, serif;
 }
 
 /* Page Transitions */
@@ -29,14 +34,14 @@ body {
 
 /* rainbow stuff */
 .rainbow-text {
-  background-image: linear-gradient(to right, rgb(20, 184, 166), rgb(34, 211, 238));
+  background-image: linear-gradient(to right, rgb(20, 184, 166), #f59e0b);
   background-clip: text;
   color: transparent;
   /* @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-400; */
 }
 
 .rainbow-bg {
-  background-image: linear-gradient(to right, rgb(20, 184, 166), rgb(34, 211, 238));
+  background-image: linear-gradient(to right, rgb(20, 184, 166), #f59e0b);
   /* @apply bg-gradient-to-r from-primary to-cyan-400; */
 }
 
@@ -45,13 +50,4 @@ body {
   font-size: 3rem/* 48px */;
   line-height: 1;
   /* @apply text-5xl; */
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-.heading-font {
-  font-family: "Marcellus SC", Georgia, serif;
 }

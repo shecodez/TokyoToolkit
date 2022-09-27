@@ -48,7 +48,7 @@ const usefulLinks = [
 <template>
   <footer class="site-footer">
     <div class="footer-wrapper">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-4">
         <div class="flex flex-col">
           <div class="rainbow-text text-2xl mb-4 font-black">
             Tokyo<span class="heading-font">Toolkit</span>
@@ -76,7 +76,7 @@ const usefulLinks = [
                 <template v-for="(p, i) in recentPosts.slice(0, 3)" :key="`recentPost-${i}`">
                   <li class="flex gap-4">
                     <img v-if="p.cover_image" :src="`/${p.cover_image}`" :alt="p.title" class="post-img h-11">
-                    <div v-else class="post-img w-11 h-11 bg-gray-500" />
+                    <img v-else src="/TokyoToolKitsune.jpg" alt="Tokyo ToolKitsune" class="post-img w-11 h-11">
                     <p class="text-ellipsis overflow-hidden">
                       <NuxtLink :to="p._path" class="truncate" :title="p.title">
                         {{ p.title }}

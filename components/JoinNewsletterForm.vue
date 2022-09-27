@@ -53,9 +53,9 @@ async function joinNewsletter() {
           <span class="sr-only">Subscribe</span>
         </button>
       </div>
-      <div class="by-clicking dark:text-gray-400 mt-2 text-xs">
+      <p class="by-clicking dark:text-gray-400 mt-2 text-xs">
         By clicking
-        <div class="i-carbon:arrow-right inline-block" /> you are agreeing to our
+        <span class="i-carbon:arrow-right inline-block w-3 h-3" /> you agree to our
         <NuxtLink to="/legal/privacy">
           Privacy Policy
         </NuxtLink>
@@ -63,7 +63,7 @@ async function joinNewsletter() {
         <NuxtLink to="/legal/terms">
           Terms of Use
         </NuxtLink>. We promise, no green eggs and spam from us. 😉
-      </div>
+      </p>
     </div>
   </form>
 </template>
@@ -73,6 +73,12 @@ a {
   font-family: 'Marcellus SC', Georgia, serif;
   @apply text-teal-500 hover:text-teal-700 cursor-pointer;
 }
+
+/* .by-clicking span svg {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+} */
 
 .success-alert {
   @apply border-l-4 border-green-500 bg-green-400 bg-opacity-30 text-green-500;

@@ -48,7 +48,7 @@ const socialIcons = [
 
 <template>
   <client-only>
-    <button title="Menu" @click="openDrawer">
+    <button title="Menu" class="flex" @click="openDrawer">
       <slot />
       <span class="sr-only">Menu</span>
     </button>

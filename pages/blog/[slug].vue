@@ -1,19 +1,19 @@
 <script setup>
-const { path } = useRoute();
+const { path } = useRoute()
 const { data } = await useAsyncData(`post-${path}`, async () => {
   // fetch document where the document path matches with the cuurent route
-  let post = queryContent().where({ _path: path }).findOne();
+  const post = queryContent().where({ _path: path }).findOne()
 
   // get the surround information, which is an array of documents that come before and after the current document
-  //let surround = queryContent('/blog').sort({ date: 1 }).findSurround(path)//.only(["_path", "title", "description"]);
+  // let surround = queryContent('/blog').sort({ date: 1 }).findSurround(path)//.only(["_path", "title", "description"]);
 
   return {
     post: await post,
-    //surround: await surround,
-  };
-});
+    // surround: await surround,
+  }
+})
 
-const config = useRuntimeConfig();
+const config = useRuntimeConfig()
 useHead({
   title: `${data.value.post.title} | ${config.public.appName}`,
   meta: [
@@ -24,12 +24,14 @@ useHead({
       content: `${config.public.siteUrl}/${data.value.post.cover_image}`,
     },
   ],
-});
+})
 </script>
 
 <template>
   <div>
-    <div v-if="!data">Loading...</div>
+    <div v-if="!data">
+      Loading...
+    </div>
     <BlogPost v-else :data="data" />
   </div>
 </template>

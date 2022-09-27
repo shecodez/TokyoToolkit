@@ -41,7 +41,7 @@ const state = reactive({
 
           <input v-model="state.query" type="text" placeholder="Search..." class="flex-1">
 
-          <button type="button" class="px-4 bg-teal-500 rounded-tr">
+          <button type="button" class="px-3.5 bg-teal-500 rounded-tr">
             <div class="i-carbon:search" />
           </button>
         </div>
@@ -53,7 +53,7 @@ const state = reactive({
 
       <div class="flex items-center justify-between rounded-b-lg">
         <button class="p-2 bg-red-400 hover:bg-red-500 rounded-bl" @click="closeModal">
-          <div class="i-carbon:close text-xs" />
+          <div class="i-carbon:close text-sm" />
         </button>
         <div class="text-xs font-bold text-right px-4">
           Hits: {{ state.results.length }}

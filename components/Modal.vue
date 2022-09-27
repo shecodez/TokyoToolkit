@@ -37,7 +37,7 @@ watch(
 
 <style scoped>
 .modal-container {
-  @apply fixed z-30 w-full h-full inset-0 flex items-center justify-center;
+  @apply fixed z-40 w-full h-full inset-0 flex items-center justify-center;
 }
 .modal-container .overlay {
   backdrop-filter: saturate(100%) blur(10px);
