@@ -78,7 +78,7 @@ useHead({
           <template v-for="(c, i) in categories" :key="`category-${i}`">
             <button
               class="px-3 py-1.5 rounded-sm text-sm capitalize flex-shrink-0"
-              :class="c == activeCategory ? 'rainbow-bg' : 'bg-gray-300 dark:bg-gray-900'"
+              :class="c === activeCategory ? 'rainbow-bg' : 'bg-gray-300 dark:bg-gray-900'"
               @click="setCategory(c)"
             >
               <span class="tracking-wide">{{ c }}</span>
