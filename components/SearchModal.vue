@@ -31,7 +31,7 @@ const state = reactive({
     >
       <form class="search-form">
         <div class="flex rounded-t-lg focus-within:ring">
-          <select v-model="state.filter" class="filter rounded-tl focus:outline-none">
+          <select v-model="state.filter" class="filter rounded-tl focus:outline-none p-3 bg-transparent">
             <template v-for="(f, i) in filters" :key="`search-filter-${i}`">
               <option :value="f">
                 {{ f }}
@@ -39,7 +39,7 @@ const state = reactive({
             </template>
           </select>
 
-          <input v-model="state.query" type="text" placeholder="Search..." class="flex-1 focus:outline-none">
+          <input v-model="state.query" type="text" placeholder="Search..." class="flex-1 focus:outline-none p-3 bg-transparent">
 
           <button type="button" class="px-3.5 bg-teal-500 rounded-tr">
             <div class="i-carbon:search" />
@@ -48,7 +48,12 @@ const state = reactive({
       </form>
 
       <div class="p-4 border-y border-dashed border-gray-500 border-opacity-50">
-        <pre>{{ state.results }}</pre>
+        <div v-if="state.results.length">
+          {{ state.results }}
+        </div>
+        <div v-else class="py-6 text-center opacity-60">
+          No recent searches
+        </div>
       </div>
 
       <div class="flex items-center justify-between rounded-b-lg">
@@ -64,11 +69,8 @@ const state = reactive({
 </template>
 
 <style scoped>
-.search-form input,
-.search-form select {
-  @apply p-3 bg-transparent;
-}
 select.filter option {
-  @apply bg-black;
+  background-color: black;
+  /* @apply bg-black; */
 }
 </style>

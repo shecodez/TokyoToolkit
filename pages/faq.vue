@@ -8,7 +8,7 @@
       <ContentDoc>
         <template #default="{ doc }">
           <section>
-            <article class="px-4 md:px-0 prose dark:prose-invert prose-sm lg:prose-lg">
+            <article class="px-4 lg:px-0 prose dark:prose-invert prose-sm lg:prose-lg">
               <ContentRenderer :value="doc" />
             </article>
           </section>

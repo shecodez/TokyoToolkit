@@ -56,17 +56,17 @@ const navIcons = [
 
 <template>
   <div class="site-top-header bg-gray-300 dark:bg-black">
-    <div class="slice-anim header-wrapper container px-4 md:px-0 h-10">
+    <div class="slice-anim header-wrapper container px-4 lg:px-0 h-10">
       <ul class="menu flex items-center">
-        <button class="nav-icon-btn" title="translate">
+        <button class="flex relative hover:text-teal-500" title="translate">
           <div class="i-carbon:translate" />
         </button>
         <li v-for="(n, i) in topLinks" :key="`top-nav-link-${i}`" class="hidden lg:inline-block">
-          <button v-if="n.dropdown" :data-text="n.label" class="slice top-nav-btn dropdown">
+          <button v-if="n.dropdown" :data-text="n.label" class="slice flex text-sm tracking-wider px-2.5 py-0.5 dropdown">
             {{ n.label }}<span class="dots" />
           </button>
           <div v-else class="slice-line">
-            <NuxtLink :to="n.link" class="slice top-nav-link" :data-text="n.label">
+            <NuxtLink :to="n.link" class="slice flex text-sm tracking-wider px-2.5 py-0.5" :data-text="n.label">
               {{ n.label }}
             </NuxtLink>
           </div>
@@ -74,7 +74,7 @@ const navIcons = [
       </ul>
       <ul class="menu-social flex items-center">
         <li v-for="(n, i) in socialIcons" :key="`nav-btn-${i}`" :title="n.label">
-          <a :href="n.link" target="_blank" class="nav-icon-btn px-2.5">
+          <a :href="n.link" target="_blank" class="flex relative hover:text-teal-500 px-2.5">
             <div :class="n.icon" />
             <span class="sr-only">{{ n.label }}</span>
           </a>
@@ -83,8 +83,8 @@ const navIcons = [
     </div>
   </div>
 
-  <header class="site-main-header bg-white dark:bg-black bg-opacity-40 dark:bg-opacity-40">
-    <div class="header-wrapper container px-4 md:px-0 h-20">
+  <header class="site-main-header bg-white dark:bg-black bg-opacity-40 dark:bg-opacity-40 shadow-lg sticky top-0 z-20">
+    <div class="header-wrapper container px-4 lg:px-0 h-20">
       <div class="flex gap-2.5 items-center">
         <SideNavDrawer>
           <div class="hidden lg:inline-block">
@@ -107,7 +107,7 @@ const navIcons = [
                 <NuxtLink
                   :to="n.link"
                   :data-text="n.label"
-                  class="slice nav-link px-6"
+                  class="slice flex font-semibold text-lg tracking-wider py-0.5 px-6"
                   :class="n.dropdown && 'dropdown'"
                 >
                   {{ n.label }}
@@ -132,7 +132,7 @@ const navIcons = [
         </ul>
         <ul class="menu-icon flex items-center">
           <template v-for="(n, i) in navIcons" :key="`nav-btn-${i}`">
-            <li class="nav-icon-btn px-2.5" :title="n.label">
+            <li class="flex relative hover:text-teal-500 px-2.5" :title="n.label">
               <NuxtLink v-if="!!n.link" :to="n.link">
                 <div :class="n.icon" />
               </NuxtLink>
@@ -150,13 +150,8 @@ const navIcons = [
 </template>
 
 <style scoped>
-/* .site-top-header {
-  @apply bg-gray-300 dark:bg-black;
-} */
-
 .site-main-header {
   backdrop-filter: saturate(180%) blur(20px);
-  @apply shadow-lg sticky top-0 z-20;
 }
 
 .header-wrapper {
@@ -166,23 +161,6 @@ const navIcons = [
   align-items: center;
   justify-content: space-between;
   /* @apply container mx-auto flex items-center justify-between; */
-}
-
-/* .site-logo {
-  @apply font-black text-lg lg:text-2xl;
-} */
-
-.top-nav-link,
-.top-nav-btn {
-  @apply flex text-sm tracking-wider px-3 py-0.5;
-}
-.nav-link,
-.nav-btn {
-  @apply flex font-semibold text-lg tracking-wider py-0.5;
-}
-
-.nav-icon-btn {
-  @apply flex relative  hover:text-teal-500;
 }
 
 .dropdown span.dots:after {
@@ -205,7 +183,9 @@ const navIcons = [
   transform: translateX(-50%);
 }
 .dropdown-menu ul.menu {
-  @apply flex flex-col;
+  display: flex;
+  flex-direction: column;
+  /* @apply flex flex-col; */
 }
 
 /* strike-through animation links */
@@ -258,7 +238,9 @@ const navIcons = [
 }
 
 .slice-anim ul.menu .slice-line {
-  @apply relative overflow-hidden;
+  position: relative;
+  overflow: hidden;
+  /* @apply relative overflow-hidden; */
 }
 .slice-anim ul.menu .slice-line:before {
   content: '';
@@ -269,7 +251,8 @@ const navIcons = [
   height: 1px;
   left: -100%;
   transition: 0.5s;
-  @apply bg-teal-500;
+  /* @apply bg-teal-500; */
+  background-color: rgb(20, 184, 166);
 }
 .slice-anim ul.menu .slice-line:hover:before {
   left: 100%;
@@ -299,12 +282,14 @@ ul.menu li button:hover:before,
 ul.menu li button:hover:after,
 ul.menu li:hover span.dots:before,
 ul.menu li:hover span.dots:after {
-  @apply text-teal-500;
+  /* @apply text-teal-500; */
+  color: rgb(20, 184, 166);
 }
 
 ul.menu li a.router-link-exact-active:before,
 ul.menu li a.router-link-exact-active:after,
 ul.menu-icon li a.router-link-exact-active > svg {
-  @apply text-teal-500;
+  /* @apply text-teal-500; */
+  color: rgb(20, 184, 166);
 }
 </style>

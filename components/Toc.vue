@@ -21,15 +21,15 @@ const flattenLinks = (links) => {
 </script>
 
 <template>
-  <nav class="toc max-h-[calc(100vh-10rem)] overflow-auto">
-    <header class="toc-header">
+  <nav class="toc p-4 border border-gray-200 rounded max-h-[calc(100vh-10rem)] overflow-auto">
+    <header class="toc-header pb-2 mb-2 border-b border-gray-200">
       <h3 class="text-xl font-bold">
         Table of contents
       </h3>
     </header>
-    <ul class="toc-links">
+    <ul class="toc-links flex flex-col gap-2 px-2">
       <!-- render each link with depth class -->
-      <li v-for="link of flattenLinks(links)" :key="link.id" :class="`toc-link _${link.depth}`">
+      <li v-for="link of flattenLinks(links)" :key="link.id" :class="`toc-link text-gray-500 _${link.depth}`">
         <a :href="`#${link.id}`">
           {{ link.text }}
         </a>
@@ -39,31 +39,18 @@ const flattenLinks = (links) => {
 </template>
 
 <style scoped>
-.toc {
-  @apply p-4 border border-gray-200 rounded;
-}
-
-.toc-header {
-  @apply pb-2 mb-2 border-b border-gray-200;
-}
-
-.toc-links {
-  @apply flex flex-col gap-2 px-2;
-}
-
-.toc-link {
-  @apply text-gray-500;
-}
-
 .toc-link._3 {
-  @apply pl-3;
+  padding-left: 0.75rem;
+  /* @apply pl-3; */
 }
 
 .toc-link._4 {
-  @apply pl-6;
+  padding-left: 1.5rem;
+  /* @apply pl-6; */
 }
 
 .toc-link._undefined {
-  @apply pl-8;
+  padding-left: 2rem;
+  /* @apply pl-8; */
 }
 </style>

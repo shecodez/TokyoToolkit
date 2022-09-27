@@ -1,4 +1,6 @@
 <script setup>
+import tokyoImg from '@/assets/images/tokyo.png'
+
 const timeline = [
   { time: '09/12/2022', text: 'Started building TokyoToolkit.com' },
   { time: '09/22/2022', text: 'Looking for the perfect house in Japan here\'s my wishlist (link to blog post)' },
@@ -6,9 +8,9 @@ const timeline = [
 </script>
 
 <template>
-  <div class="about relative flex items-center">
-    <img src="~/assets/images/tokyo.png" alt="tokyo" class="absolute inset-0">
-    <div class="card lg:w-2/5 md:w-1/2 px-4 md:px-8 md:ml-20 lg:ml-40 bg-white dark:bg-gray-800">
+  <div class="about relative flex items-center" :style="{ 'background-image': `url(${tokyoImg})` }">
+    <!-- <img src="~/assets/images/tokyo.png" alt="tokyo" class="absolute inset-0"> -->
+    <div class="card lg:w-2/5 md:w-1/2 px-4 md:px-8 md:ml-20 lg:ml-40 bg-white dark:bg-gray-800 py-8 relative z-10">
       <article class="prose dark:prose-invert prose-sm lg:prose-lg">
         <h1>About</h1>
         <p>
@@ -48,11 +50,7 @@ const timeline = [
 
 <style scoped>
 div.about {
-  min-height: calc(100vh - 12.7vh);
-}
-
-.about .card {
-  @apply py-8 relative z-10;
+  min-height: calc(100vh - 12vh);
 }
 
 /*section.timeline {

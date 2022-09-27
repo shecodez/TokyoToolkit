@@ -59,7 +59,7 @@ const socialIcons = [
           <div class="i-carbon:close" />
         </button>
 
-        <div class="site-logo rainbow-text">
+        <div class="site-logo rainbow-text text-4xl pt-10 pb-3 font-black">
           Tokyo<span class="heading-font">Toolkit</span>
         </div>
 
@@ -68,7 +68,7 @@ const socialIcons = [
             <template v-for="(n, i) in navLinks" :key="`main-nav-link-${i}`">
               <li class="group relative">
                 <div class="slice-line">
-                  <NuxtLink :to="n.link" :data-text="n.label" class="slice nav-link" :class="n.dropdown && 'dropdown'">
+                  <NuxtLink :to="n.link" :data-text="n.label" class="slice nav-link flex font-semibold text-xl tracking-wider p-4" :class="n.dropdown && 'dropdown'">
                     {{ n.label }}
                     <span v-if="n.dropdown" class="dots" />
                   </NuxtLink>
@@ -97,7 +97,7 @@ const socialIcons = [
           </h2>
           <ul class="flex justify-center gap-4 text-xl pt-3">
             <li v-for="(s, i) in socialIcons" :key="`sidenav-social-icon-${i}`" :title="s.label">
-              <a :href="s.link" target="_blank" class="link"><div :class="s.icon" /></a>
+              <a :href="s.link" target="_blank" class="a-link"><div :class="s.icon" /></a>
             </li>
           </ul>
         </div>
@@ -109,18 +109,18 @@ const socialIcons = [
             All Rights Reserved.
           </p>
           <div class="divide-x divide text-xs md:text-sm">
-            <NuxtLink to="/legal/privacy" class="link pr-2">
+            <NuxtLink to="/legal/privacy" class="a-link pr-2">
               Privacy Policy
             </NuxtLink>
-            <NuxtLink to="/legal/terms" class="link pl-2">
+            <NuxtLink to="/legal/terms" class="a-link pl-2">
               Terms of Use
             </NuxtLink>
           </div>
         </div>
 
-        <div class="flex items-center justify-center gap-1 text-xs">
+        <div class="flex items-center justify-center gap-1 text-xs md:text-sm">
           Made with <div class="i-carbon:favorite-filled" /> by
-          <a href="https://shecodez.com" target="_blank" class="link">shecodez</a> | NJN
+          <a href="https://shecodez.com" target="_blank" class="a-link">shecodez</a> | NJN
         </div>
       </div>
     </Drawer>
@@ -128,21 +128,14 @@ const socialIcons = [
 </template>
 
 <style scoped>
-/* .side-nav {
-  @apply relative py-4 flex flex-col items-center h-full;
-} */
-
-.site-logo {
-  @apply text-4xl pt-10 pb-3 font-black;
-}
-
-.nav-link {
-  @apply flex font-semibold text-xl tracking-wider p-4;
-}
-
-.link {
+.a-link {
   font-family: 'Marcellus SC', Georgia, serif;
-  @apply text-teal-500 hover:text-teal-700 cursor-pointer;
+  /* @apply text-teal-500 hover:text-teal-700; */
+  color: rgb(20, 184, 166);
+  cursor: pointer;
+}
+.a-link:hover {
+  color:rgb(13, 148, 136)
 }
 
 /* strike-through animation links */
@@ -182,7 +175,9 @@ const socialIcons = [
   transform: translateX(-2px);
 }
 .slice-anim ul.menu .slice-line {
-  @apply relative overflow-hidden;
+  position: relative;
+  overflow: hidden;
+  /* @apply relative overflow-hidden; */
 }
 .slice-anim ul.menu .slice-line:before {
   content: '';
@@ -193,7 +188,8 @@ const socialIcons = [
   height: 1px;
   left: -100%;
   transition: 0.5s;
-  @apply bg-teal-500;
+  /* @apply bg-teal-500; */
+  background-color: rgb(20, 184, 166);
 }
 .slice-anim ul.menu .slice-line:hover:before {
   left: 100%;
@@ -217,12 +213,14 @@ ul.menu li a:hover:before,
 ul.menu li a:hover:after,
 ul.menu li:hover span.dots:before,
 ul.menu li:hover span.dots:after {
-  @apply text-teal-500;
+  /* @apply text-teal-500; */
+  color: rgb(20, 184, 166);
 }
 
 ul.menu li a.router-link-exact-active:before,
 ul.menu li a.router-link-exact-active:after {
-  @apply text-teal-500;
+  /* @apply text-teal-500; */
+  color: rgb(20, 184, 166);
 }
 
 .dropdown span.dots:after {

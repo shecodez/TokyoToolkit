@@ -64,21 +64,21 @@ async function handleSubmit() {
       <span v-if="state.error">❗ {{ state.error }}</span>
       <span v-else>✔️ Message sent. Thanks!</span>
     </div>
-    <form v-else ref="formEl" name="contact" netlify @submit.prevent="handleSubmit">
+    <form v-else ref="formEl" name="contact" class="flex flex-col gap-3 mt-6" @submit.prevent="handleSubmit">
       <input type="hidden" name="form-name" value="contact">
       <div class="flex flex-col md:flex-row gap-3">
         <div class="flex-1">
           <label for="name" class="sr-only">Name*</label>
-          <input v-model="form.name" type="text" name="name" placeholder="Name" required class="bg-gray-200 dark:bg-gray-900">
+          <input v-model="form.name" type="text" name="name" placeholder="Name" required class=" p-3 w-full bg-gray-200 dark:bg-gray-900">
         </div>
         <div class="flex-1">
           <label for="email" class="sr-only">Email*</label>
-          <input v-model="form.email" type="email" name="email" placeholder="E-mail" required class="bg-gray-200 dark:bg-gray-900">
+          <input v-model="form.email" type="email" name="email" placeholder="E-mail" required class=" p-3 w-full bg-gray-200 dark:bg-gray-900">
         </div>
       </div>
       <div>
         <label for="subject" class="sr-only">Subject</label>
-        <input v-model="form.subject" type="text" name="subject" placeholder="Subject" class="bg-gray-200 dark:bg-gray-900">
+        <input v-model="form.subject" type="text" name="subject" placeholder="Subject" class=" p-3 w-full bg-gray-200 dark:bg-gray-900">
       </div>
       <div class="hidden">
         <label class="sr-only">Don't fill this out if you're human</label>
@@ -86,10 +86,10 @@ async function handleSubmit() {
       </div>
       <div>
         <label for="message" class="sr-only">Message*</label>
-        <textarea v-model="form.message" name="message" placeholder="Message" rows="4" required class="bg-gray-200 dark:bg-gray-900" />
+        <textarea v-model="form.message" name="message" placeholder="Message" rows="4" required class=" p-3 w-full bg-gray-200 dark:bg-gray-900" />
       </div>
       <!-- <div data-netlify-recaptcha="true" /> -->
-      <button type="submit" class="send-btn rainbow-bg">
+      <button type="submit" class="send-btn rainbow-bg w-max px-6 py-2 uppercase flex items-center gap-2">
         <div v-if="state.loading" class="animate-spin">
           <div class="i-carbon:renew" />
         </div>
@@ -101,15 +101,6 @@ async function handleSubmit() {
 </template>
 
 <style scoped>
-.contact-form input,
-.contact-form textarea {
-  @apply p-3 w-full;
-}
-
-.contact-form form {
-  @apply flex flex-col gap-3 mt-6;
-}
-
 input[required],
 textarea[required] {
   background-image: radial-gradient(#f00 15%, transparent 16%), radial-gradient(#f00 15%, transparent 16%);
@@ -120,19 +111,35 @@ textarea[required] {
 
 .send-btn {
   transition: all 600ms cubic-bezier(0.23, 1, 0.32, 1);
-  @apply w-max px-6 py-2 uppercase flex items-center gap-2;
+  /* @apply w-max px-6 py-2 uppercase flex items-center gap-2; */
 }
 
 .alert {
-  @apply p-4 flex items-center my-4;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  /* @apply p-4 flex items-center my-4; */
+  border-left-width: 4px;
+  border-left-style: solid;
 }
 .success-alert {
-  @apply border-l-4 border-green-600 bg-green-400 bg-opacity-20 text-green-600;
+  border-color: rgb(22, 163, 74);
+  background-color: rgba(74, 222, 128, 0.2);
+  color: rgb(22, 163, 74);
+  /* @apply border-l-4 border-green-600 bg-green-400 bg-opacity-20 text-green-600; */
 }
 .error-alert {
-  @apply border-l-4 border-red-600 bg-red-400 bg-opacity-20 text-red-600;
+  border-color: rgb(220, 38, 38);
+  background-color: rgba(248, 113, 113, 0.2);
+  color: rgb(220, 38, 38);
+  /* @apply border-l-4 border-red-600 bg-red-400 bg-opacity-20 text-red-600; */
 }
 .bot-alert {
-  @apply border-l-4 border-orange-600 bg-orange-400 bg-opacity-20 text-orange-600;
+  border-color: rgb(234, 88, 12);
+  background-color: rgba(251, 146, 60, 0.2);
+  color: rgb(234, 88, 12);
+  /* @apply border-l-4 border-orange-600 bg-orange-400 bg-opacity-20 text-orange-600; */
 }
 </style>

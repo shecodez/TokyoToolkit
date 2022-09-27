@@ -17,11 +17,11 @@ useHead({
 <template>
   <div class="blog-page">
     <div class="fixed flex flex-col justify-center inset-y-0 right-6 gap-6 z-20">
-      <NuxtLink to="/topics" class="icon-link bg-teal-500 hover:bg-teal-700" title="Topics">
+      <NuxtLink to="/topics" class="bg-teal-500 hover:bg-teal-700 text-xl p-2 rounded" title="Topics">
         <div class="i-carbon:folder-details" />
         <span class="sr-only">Topics</span>
       </NuxtLink>
-      <NuxtLink to="/blog/tags" class="icon-link bg-teal-500 hover:bg-teal-700" title="Tags">
+      <NuxtLink to="/blog/tags" class="bg-teal-500 hover:bg-teal-700 text-xl p-2 rounded" title="Tags">
         <div class="i-carbon:tag-group" />
         <span class="sr-only">Tags</span>
       </NuxtLink>
@@ -44,13 +44,3 @@ useHead({
     </section>
   </div>
 </template>
-
-<style scoped>
-/* .post {
-  @apply bg-gray-300 dark:bg-gray-900;
-} */
-
-.icon-link {
-  @apply text-xl p-2 rounded;
-}
-</style>

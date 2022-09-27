@@ -21,7 +21,7 @@ useHead({
       />
     </div>
 
-    <div class="card lg:w-1/3 md:w-1/2 lg:mr-10 px-5 py-24 mx-auto flex flex-col bg-white dark:bg-gray-800">
+    <div class="card lg:w-1/3 md:w-1/2 lg:mr-10  mx-auto flex flex-col bg-white dark:bg-gray-800 p-8 relative z-10 shadow-md">
       <h2 class="rainbow-text text-3xl lg:text-5xl font-bold mb-6">
         Get in Touch
       </h2>
@@ -39,9 +39,5 @@ useHead({
 <style scoped>
 div.contact {
   min-height: calc(100vh - 12.7vh);
-}
-
-.contact .card {
-  @apply p-8 relative z-10 shadow-md;
 }
 </style>

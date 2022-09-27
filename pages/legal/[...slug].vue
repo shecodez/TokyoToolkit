@@ -7,7 +7,7 @@
             <aside v-if="!!doc.body.toc.links.length" class="w-64 hidden md:block">
               <Toc :links="doc.body.toc.links" />
             </aside>
-            <article class="px-4 md:px-0 prose dark:prose-invert prose-sm lg:prose-lg">
+            <article class="px-4 lg:px-0 prose dark:prose-invert prose-sm lg:prose-lg">
               <ContentRenderer :value="doc" />
             </article>
           </section>
@@ -22,6 +22,8 @@
 
 <style scoped>
 aside > .toc {
-  @apply sticky top-24;
+  position: sticky;
+  top: 6rem;
+  /* @apply sticky top-24; */
 }
 </style>

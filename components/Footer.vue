@@ -46,8 +46,8 @@ const usefulLinks = [
 </script>
 
 <template>
-  <footer class="site-footer px-4 md:px-0 bg-gray-300 dark:bg-black">
-    <div class="footer-wrapper">
+  <footer class="site-footer pt-6 pb-3 mt-auto px-4 lg:px-0 bg-gray-300 dark:bg-black">
+    <div class="footer-wrapper container mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-4">
         <div class="flex flex-col">
           <div class="rainbow-text text-2xl mb-4 font-black">
@@ -161,17 +161,14 @@ const usefulLinks = [
 </template>
 
 <style scoped>
-.site-footer {
-  @apply pt-6 pb-3 mt-auto;
-}
-
-.footer-wrapper {
-  @apply container mx-auto;
-}
-
 a {
   font-family: 'Marcellus SC', Georgia, serif;
-  @apply text-teal-500 hover:text-teal-700 cursor-pointer;
+  color: rgb(20, 184, 166);
+  cursor: pointer;
+  /* @apply text-teal-500 hover:text-teal-700 cursor-pointer; */
+}
+a:hover {
+  color: rgb(15, 118, 110)
 }
 
 img.post-img {

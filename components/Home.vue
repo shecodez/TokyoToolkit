@@ -7,7 +7,7 @@ const { data: blogNav } = await useAsyncData('navigation', () => {
 </script>
 
 <template>
-  <div class="container mx-auto">
+  <div class="container mx-auto px-4 lg:px-0">
     <section class="pt-20">
       <p class="text-2xl lg:text-5xl leading-normal font-semibold text-center mb-2">
         Welcome to Tokyo<span class="heading-font">Toolkit</span>

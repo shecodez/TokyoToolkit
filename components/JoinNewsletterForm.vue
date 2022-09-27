@@ -71,7 +71,12 @@ async function joinNewsletter() {
 <style scoped>
 a {
   font-family: 'Marcellus SC', Georgia, serif;
-  @apply text-teal-500 hover:text-teal-700 cursor-pointer;
+  color: rgb(20, 184, 166);
+  cursor: pointer;
+  /* @apply text-teal-500 hover:text-teal-700 cursor-pointer; */
+}
+a:hover {
+  color: rgb(15, 118, 110)
 }
 
 /* .by-clicking span svg {
@@ -81,9 +86,19 @@ a {
 } */
 
 .success-alert {
-  @apply border-l-4 border-green-500 bg-green-400 bg-opacity-30 text-green-500;
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-color: rgb(22, 163, 74);
+  background-color: rgba(74, 222, 128, 0.2);
+  color: rgb(22, 163, 74);
+  /* @apply border-l-4 border-green-600 bg-green-400 bg-opacity-20 text-green-600; */
 }
 .error-alert {
-  @apply border-l-4 border-red-500 bg-red-400 bg-opacity-30 text-red-500;
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-color: rgb(220, 38, 38);
+  background-color: rgba(248, 113, 113, 0.2);
+  color: rgb(220, 38, 38);
+  /* @apply border-l-4 border-red-600 bg-red-400 bg-opacity-20 text-red-600; */
 }
 </style>

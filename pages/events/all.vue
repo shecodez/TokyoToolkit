@@ -107,10 +107,10 @@ const calendarOptions = {
               <span class="text-xs uppercase">東京</span>
             </div>
           </div>
-          <div class="ml-auto flex items-center pr-2">
+          <div class="ml-auto flex items-start pr-2">
             <span class="text-4xl font-bold">72</span>
-            <div class="i-carbon:circle-dash" />
-            <h5 class="font-bold">
+            <div class="i-carbon:navaid-civil w-3 h-3" />
+            <h5 class="font-bold self-end">
               F
             </h5>
           </div>

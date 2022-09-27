@@ -20,14 +20,14 @@ watch(
 
 <template>
   <Teleport to="body">
-    <div v-if="isOpen" class="drawer-container">
-      <div ref="overlay" class="overlay" />
+    <div v-if="isOpen" class="drawer-container fixed z-30 w-full min-h-screen inset-0 flex">
+      <div ref="overlay" class="overlay fixed w-full h-full bg-black bg-opacity-80 overflow-y-auto" />
 
       <div ref="drawer" class="relative" :class="css">
         <slot />
       </div>
 
-      <button class="close-btn" :class="showRight ? 'left-4' : 'right-4'" @click="$emit('close')">
+      <button class="close-btn absolute top-4 text-white opacity-80 hover:opacity-100 flex flex-col items-center" :class="showRight ? 'left-4' : 'right-4'" @click="$emit('close')">
         <div class="i-carbon:close" />
         <span class="text-sm">(Esc)</span>
       </button>
@@ -36,15 +36,8 @@ watch(
 </template>
 
 <style scoped>
-.drawer-container {
-  @apply fixed z-30 w-full min-h-screen inset-0 flex;
-}
 .drawer-container .overlay {
   backdrop-filter: saturate(100%) blur(10px);
-  @apply fixed w-full h-full bg-black bg-opacity-80 overflow-y-auto;
-}
-
-.close-btn {
-  @apply absolute top-4 text-white opacity-80 hover:opacity-100 flex flex-col items-center;
+  /* @apply fixed w-full h-full bg-black bg-opacity-80 overflow-y-auto; */
 }
 </style>

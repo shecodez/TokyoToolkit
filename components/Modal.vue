@@ -20,14 +20,14 @@ watch(
 
 <template>
   <Teleport to="body">
-    <div v-if="isOpen" class="modal-container">
-      <div ref="overlay" class="overlay" />
+    <div v-if="isOpen" class="modal-container fixed z-40 w-full h-full inset-0 flex items-center justify-center">
+      <div ref="overlay" class="overlay fixed w-full h-full bg-black bg-opacity-80 overflow-y-auto" />
 
       <div ref="modal" class="relative" :class="css">
         <slot />
       </div>
 
-      <button class="close-btn" @click="$emit('close')">
+      <button class="close-btn absolute top-4 right-4 text-white opacity-80 hover:opacity-100 flex flex-col items-center" @click="$emit('close')">
         <div class="i-carbon:close" />
         <span class="text-sm">(Esc)</span>
       </button>
@@ -36,15 +36,7 @@ watch(
 </template>
 
 <style scoped>
-.modal-container {
-  @apply fixed z-40 w-full h-full inset-0 flex items-center justify-center;
-}
 .modal-container .overlay {
   backdrop-filter: saturate(100%) blur(10px);
-  @apply fixed w-full h-full bg-black bg-opacity-80 overflow-y-auto;
-}
-
-.close-btn {
-  @apply absolute top-4 right-4 text-white opacity-80 hover:opacity-100 flex flex-col items-center;
 }
 </style>

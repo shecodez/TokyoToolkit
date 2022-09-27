@@ -11,75 +11,42 @@ const postTypeClasses = [
 </script>
 
 <template>
-  <div class="post bg-gray-300 dark:bg-gray-900" :class="showTextLeft && 'flex-row-reverse'">
-    <div v-if="post.type === 'quote'" class="quote-icon">
+  <div class="post relative aspect-video flex bg-gray-300 dark:bg-gray-900" :class="showTextLeft && 'flex-row-reverse'">
+    <div v-if="post.type === 'quote'" class="quote-icon absolute inset-0 opacity-10 text-9xl">
       <div class="i-carbon:quotes" />
     </div>
 
-    <div v-if="post.cover_image" class="media-container">
-      <img :src="`/${post.cover_image}`" :alt="post.title" class="post-img">
+    <div v-if="post.cover_image" class="media-container flex-1 overflow-hidden">
+      <img :src="`/${post.cover_image}`" :alt="post.title" class="post-img object-cover w-full h-full">
       <!-- <Carousel v-if="post.type === 'gallery'" :slides="post.gallery" /> -->
     </div>
-    <div v-if="!showMediaOnly" class="text-container">
+    <div v-if="!showMediaOnly" class="text-container relative flex-1 flex flex-col items-stretch p-4">
       <template v-if="post.cover_image">
         <div v-if="showTextLeft" class="arrow arrow-right border-l-gray-300 dark:border-l-gray-900" />
         <div v-else class="arrow arrow-left border-r-gray-300 dark:border-r-gray-900" />
       </template>
-      <small class="topic">
+      <small class="topic uppercase text-teal-500 text-xs pb-1">
         <NuxtLink :to="`/topics/${post._path.split('/')[2]}`" class="hover:underline">
           {{ post._path.split('/')[2].replace('-', ' ') }}
         </NuxtLink>
       </small>
-      <h3 class="title">
+      <h3 class="title hover:text-teal-500 text-xl leading-5 pb-2">
         <NuxtLink :to="post._path" class="line-clamp-2" :title="post.title">
           {{ post.title }}
         </NuxtLink>
       </h3>
-      <p class="description line-clamp-3 text-xs lg:text-base">
+      <p class="description tracking-wide font-thin leading-relaxed line-clamp-3 text-xs lg:text-base">
         {{ post.description }}
       </p>
-      <NuxtLink :to="post._path" class="read-more-btn rainbow-bg">
+      <NuxtLink :to="post._path" class="read-more-btn rainbow-bg self-start mt-3 px-3 py-1">
         Read More
       </NuxtLink>
-      <small v-if="post.date" class="date">{{ formatDate(new Date(post.date)) }}</small>
+      <small v-if="post.date" class="date text-xs uppercase mt-auto">{{ formatDate(new Date(post.date)) }}</small>
     </div>
   </div>
 </template>
 
 <style scoped>
-.post {
-  @apply relative aspect-video flex;
-}
-
-.post .media-container {
-  @apply flex-1 overflow-hidden;
-}
-.post-img {
-  @apply object-cover w-full h-full;
-}
-
-.post .text-container {
-  @apply relative flex-1 flex flex-col items-stretch p-4;
-}
-.post .topic {
-  @apply uppercase text-teal-500 text-xs pb-1;
-}
-.post .title {
-  @apply hover:text-teal-500 text-xl leading-5 pb-2;
-}
-.post .description {
-  @apply tracking-wide font-thin leading-relaxed;
-}
-.post .date {
-  @apply text-xs uppercase mt-auto;
-}
-.quote-icon {
-  @apply absolute inset-0 opacity-10 text-9xl;
-}
-.read-more-btn {
-  @apply self-start mt-3 px-3 py-1;
-}
-
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -98,14 +65,18 @@ const postTypeClasses = [
   height: 0;
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
-  @apply absolute top-10;
+  position: absolute;
+  top: 2.5rem;
+  /* @apply absolute top-10; */
 }
 .arrow-right {
   border-left: 20px solid transparent;
-  @apply  -right-5;
+  right: -1.25rem;
+  /* @apply  -right-5; */
 }
 .arrow-left {
   border-right: 20px solid transparent;
-  @apply  -left-5;
+  left: -1.25rem;
+  /* @apply  -left-5; */
 }
 </style>
