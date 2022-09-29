@@ -8,14 +8,14 @@ const timeline = [
 </script>
 
 <template>
-  <div class="about relative flex items-center" :style="{ 'background-image': `url(${tokyoImg})` }">
+  <div class="about relative flex items-center" :style="{ 'background-image': `url(${tokyoImg})`, 'background-position': 'center', 'background-size': 'cover' }">
     <!-- <img src="~/assets/images/tokyo.png" alt="tokyo" class="absolute inset-0"> -->
-    <div class="card lg:w-2/5 md:w-1/2 px-4 md:px-8 md:ml-20 lg:ml-40 bg-white dark:bg-gray-800 py-8 relative z-10">
+    <div class="card md:w-2/3 lg:w-1/2 xl:w-1/3 md:ml-20 lg:ml-40 bg-white dark:bg-gray-800 px-4 md:px-8 py-8 relative z-10">
       <article class="prose dark:prose-invert prose-sm lg:prose-lg">
         <h1>About</h1>
         <p>
           I designed TokyoToolkit.com to be a place for DIY interior / exterior design tutorials, workshops,
-          documentaries, interviews, reviews, podcasts, and exploration. A space for community, global communications,
+          documentaries, interviews, reviews, podcasts, toolkits, and exploration. A space for community, global communications,
           and all things Japan.
         </p>
         <p>

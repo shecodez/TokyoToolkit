@@ -59,7 +59,7 @@ useHead({
       Shop
       <span v-if="activeCategory">"{{ activeCategory }}"</span>
     </h1>
-    <div v-if="products" class="container mx-auto">
+    <div v-if="products" class="container px-4 lg:px-0 mx-auto">
       <section v-if="categories" class="pt-6">
         <div class="flex item-center gap-4 mb-4">
           <h3 class="text-lg">
@@ -74,7 +74,7 @@ useHead({
             clear <div class="i-carbon:close" />
           </button>
         </div>
-        <div class="flex items-center gap-4 mb-4">
+        <div class="flex flex-wrap items-center gap-4 mb-4">
           <template v-for="(c, i) in categories" :key="`category-${i}`">
             <button
               class="px-3 py-1.5 rounded-sm text-sm capitalize flex-shrink-0"

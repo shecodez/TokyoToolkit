@@ -1,5 +1,12 @@
+<script setup>
+const config = useRuntimeConfig()
+useHead({
+  title: `Support | ${config.public.appName}`,
+})
+</script>
+
 <template>
-  <div class="flex flex-col items-center my-10">
+  <div class=" px-4 lg:px-0 flex flex-col items-center my-10">
     <h1 class="title mb-10">
       Support
     </h1>

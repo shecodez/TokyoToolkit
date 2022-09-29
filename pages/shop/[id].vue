@@ -16,7 +16,7 @@ useHead({
 
 <template>
   <div class="product">
-    <section v-if="product" class="container mx-auto my-10">
+    <section v-if="product" class="container px-4 lg:px-0 mx-auto my-10">
       <div class="relative flex flex-col lg:flex-row items-start gap-8">
         <section class="product-image flex-1">
           <img :src="product.image" :alt="product.title" class="w-full object-contain h-[90%]">

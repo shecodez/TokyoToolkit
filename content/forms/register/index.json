@@ -1,0 +1,70 @@
+[
+  {
+    "$el": "h1",
+    "attrs": {
+      "class": "text-2xl font-bold mb-4 text-center"
+    },
+    "children": "Create an Account"
+  },
+  {
+    "$formkit": "text",
+    "id": "registerusername",
+    "name": "username",
+    "label": "Username",
+    "classes": {
+      "outer": "mb-3",
+      "label": "uppercase text-xs font-bold tracking-wide",
+      "input": "p-2 bg-transparent w-full border rounded",
+      "message": "mt-1 text-red-500 text-xs"
+    },
+    "validation": "required|length:3,30"
+  },
+  {
+    "$formkit": "email",
+    "name": "email",
+    "label": "Email",
+    "classes": {
+      "outer": "mb-3",
+      "label": "uppercase text-xs font-bold tracking-wide",
+      "input": "p-2 bg-transparent w-full border rounded",
+      "message": "mt-1 text-red-500 text-xs"
+    },
+    "validation": "required|email"
+  },
+  {
+    "$formkit": "password",
+    "id": "registerpassword",
+    "name": "password",
+    "label": "Password",
+    "suffixIcon": "eyeClosed",
+    "sectionsSchema": {
+      "suffixIcon": {
+        "$el": "button",
+        "attrs": {
+          "type": "button",
+          "onClick": "$showHidePassword"
+        }
+      }
+    },
+    "classes": {
+      "outer": "mb-3",
+      "label": "uppercase text-xs font-bold tracking-wide",
+      "inner": "relative",
+      "input": "p-2 bg-transparent w-full border rounded",
+      "suffixIcon": "absolute top-2 right-2 w-5 cursor-pointer hover:text-teal-500",
+      "message": "mt-1 text-red-500 text-xs"
+    },
+    "validation": "required|length:5"
+  },
+  {
+    "$formkit": "submit",
+    "classes": {
+      "input": "block w-full bg-teal-500 hover:bg-teal-700 mt-4 mb-2 py-2 rounded"
+    },
+    "children": {
+      "if": "$loading",
+      "then": "Loading...",
+      "else": "Register"
+    }
+  }
+]

@@ -22,5 +22,8 @@
     "nuxt": "^3.0.0-rc.8",
     "pinia": "^2.0.21",
     "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "@formkit/nuxt": "next"
   }
 }

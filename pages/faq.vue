@@ -1,3 +1,10 @@
+<script setup>
+const config = useRuntimeConfig()
+useHead({
+  title: `FAQ | ${config.public.appName}`,
+})
+</script>
+
 <template>
   <div class="container mx-auto py-12 flex-1">
     <h1 class="title mb-4">
